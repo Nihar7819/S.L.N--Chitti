@@ -1,0 +1,75 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+export default function ChittiDashboard() {
+  return (
+    <div className="min-h-screen bg-gradient-to-r from-indigo-100 to-purple-100 p-6">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold text-center text-purple-800 mb-10">
+          💰 Chitti Finance Dashboard
+        </h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Create Chit Group */}
+          <Card className="shadow-lg rounded-2xl border-2 border-purple-200">
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold text-purple-700 mb-4">Create Chit Group</h2>
+              <form className="space-y-4">
+                <div>
+                  <Label>Group Name</Label>
+                  <Input placeholder="e.g. August Chit 2025" />
+                </div>
+                <div>
+                  <Label>Amount</Label>
+                  <Input type="number" placeholder="₹10000" />
+                </div>
+                <div>
+                  <Label>Duration (Months)</Label>
+                  <Input type="number" placeholder="12" />
+                </div>
+                <Button className="w-full bg-purple-700 hover:bg-purple-800 text-white">
+                  Create Group
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+
+          {/* Add Member */}
+          <Card className="shadow-lg rounded-2xl border-2 border-purple-200">
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold text-purple-700 mb-4">Add Member</h2>
+              <form className="space-y-4">
+                <div>
+                  <Label>Member Name</Label>
+                  <Input placeholder="e.g. Ramesh Kumar" />
+                </div>
+                <div>
+                  <Label>Phone Number</Label>
+                  <Input type="tel" placeholder="9876543210" />
+                </div>
+                <div>
+                  <Label>Assign to Group</Label>
+                  <Input placeholder="Group ID / Name" />
+                </div>
+                <Button className="w-full bg-purple-700 hover:bg-purple-800 text-white">
+                  Add Member
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Payment Status Section */}
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-purple-800 mb-4">📊 Payment Overview</h2>
+          <Card className="shadow-md p-4 bg-white border-2 border-purple-200">
+            <p className="text-gray-700">No payment data yet. Integrate with backend to display status.</p>
+          </Card>
+        </div>
+      </div>
+    </div>
+  );
+}
